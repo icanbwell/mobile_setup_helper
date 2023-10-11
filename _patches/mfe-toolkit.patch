@@ -1,0 +1,14 @@
+diff --git a/libs/native-components/src/ComponentView/ComponentView.component.tsx b/libs/native-components/src/ComponentView/ComponentView.component.tsx
+index eca99ee2..834cb6c1 100644
+--- a/libs/native-components/src/ComponentView/ComponentView.component.tsx
++++ b/libs/native-components/src/ComponentView/ComponentView.component.tsx
+@@ -59,7 +59,7 @@ function createSource({
+ }: Omit<ComponentViewProps, 'authStrategy' | 'onEvent' | 'debug' | 'nativeModules'>): ComponentViewSource {
+   if (!uri) {
+     const html = htmlTemplate({
+-      script: `https://embeddables.prod.icanbwell.com/${name}/${version ?? 'latest'}/loader/index.js`,
++      script: 'http://localhost:8085/index.js',
+       webcomponent: `<bwell-${name} id=${WEB_COMPONENT_ID} loading />`,
+       clientKey,
+       userToken,
+       

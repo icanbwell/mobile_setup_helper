@@ -1,0 +1,17 @@
+diff --git a/tools/scripts/startDev.ts b/tools/scripts/startDev.ts
+index 32c4bb83..a73566af 100644
+--- a/tools/scripts/startDev.ts
++++ b/tools/scripts/startDev.ts
+@@ -34,8 +34,9 @@ const runEmbeddableTarget = (embeddable: string, target: string) =>
+     }),
+   )
+   // Start http-server for loader(s)
+-  execa('http-server', ['./dist/libs', '-p', '8081'], {
+-    stdio: 'inherit',
++//  execa('http-server', ['./dist/libs', '-p', '8081'], {
++  execa('http-server', ['./dist/libs/composite/package', '-p', '8085'], {
++         stdio: 'inherit',
+   })
+   // Start dev app
+   execa('yarn', ['nx', 'run', 'web:serve'], {
+      
