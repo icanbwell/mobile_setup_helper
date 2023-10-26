@@ -116,6 +116,9 @@ def main():
     execute_command("yarn", em_dir)
     execute_command(f"cp {PATCH_DIR}/em-mobile-platform.env {em_dir}/.env")
 
+    #now for some reason i have to run yarn again in embeddables dir. i do not know why, but whatever.
+    execute_command("yarn", embed_dir)
+
    # prompt_start_emulator()
 
 
