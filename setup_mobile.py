@@ -71,7 +71,7 @@ def main():
 
     repos_to_clone = [
         "git@github.com:icanbwell/mfe-toolkit.git",
-        "git@github.com:icanbwell/embeddables.git",
+        "git@github.com:icanbwell/ui-platform.git",
         "git@github.com:icanbwell/em-mobile-platform.git"
     ]
 
@@ -97,8 +97,8 @@ def main():
     execute_command("npx yalc push dist/libs/native-plugins", toolkit_dir)
 
     # embeddables prep
-    print("\nMaking changes to embeddables")
-    embed_dir = os.path.join(DEV_DIR, "embeddables")
+    print("\nMaking changes to ui-platform (embeddables)")
+    embed_dir = os.path.join(DEV_DIR, "ui-platform")
     execute_command("git add . && git reset -q --hard", embed_dir)
     execute_command("rm -rf dist", embed_dir)
     execute_command(f"git apply -q -3 --ignore-whitespace --ignore-space-change {PATCH_DIR}/embeddables.patch", embed_dir)
